@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from "./styles/App.module.css";
+import Button from "./components/Button/Button";
+import Header from "./components/Header/Header";
+import SocialLinks from "./components/SocialLinks/SocialLinks";
+import Footer from "./components/Footer/Footer";
+import { content } from "./config/content";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${styles.container}`}>
+      <Header
+        title={content.header.title}
+        subTitle={content.header.subTitle}
+        pictureSrc={content.header.pictureSrc}
+        pictureAlt={content.header.pictureAlt}
+      />
+      {content.buttons.map((link) => (
+        <Button link={link.link} text={link.text} key={link.text} />
+      ))}
+      <SocialLinks links={content.socialLinks} />
+      <Footer text={content.footerText} />
     </div>
   );
 }

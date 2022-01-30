@@ -1,0 +1,10 @@
+:root {
+  --color-black: #001219;
+  --color-blue: #005f73;
+  --color-dark-green: #0a9396;
+  --color-light-green: #94d2bd;
+  --color-white: hsl(0, 0%, 96%);
+  --text-font-family: "Roboto", sans-serif;
+  --text-default-weight: 400;
+  --text-title-weight: 500;
+}
