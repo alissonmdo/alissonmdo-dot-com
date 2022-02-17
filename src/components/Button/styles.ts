@@ -1,4 +1,6 @@
-.container {
+import styled from "styled-components";
+
+export const Container = styled.button`
   width: 75%;
   max-width: 21.875rem;
   height: 3.75rem;
@@ -13,10 +15,10 @@
   color: var(--color-white);
 
   transition: all ease-in-out 200ms;
-}
 
-.container:hover{
-  background-color: var(--color-blue);
-  box-shadow: 0 0 20px var(--color-blue);
-  cursor: pointer;
-}
+  :hover{
+    background-color: var(--color-blue);
+    box-shadow: 0 0 20px var(--color-blue);
+    cursor: pointer;
+  }
+`

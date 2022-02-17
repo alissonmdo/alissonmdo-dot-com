@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import * as S from "./styles";
 export interface IButton {
   text: string;
   link: string;
@@ -7,11 +7,7 @@ function Button({ text, link }: IButton) {
   const goTo = () => {
     window.location.href = link;
   };
-  return (
-    <button className={styles.container} onClick={() => goTo()}>
-      {text}
-    </button>
-  );
+  return <S.Container onClick={() => goTo()}>{text}</S.Container>;
 }
 
 export default Button;

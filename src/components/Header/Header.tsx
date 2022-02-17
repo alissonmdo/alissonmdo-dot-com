@@ -1,4 +1,4 @@
-import styles from "./Header.module.css";
+import * as S from "./styles";
 export interface IHeader {
   title: string;
   subTitle: string;
@@ -7,11 +7,11 @@ export interface IHeader {
 }
 function Header({ title, subTitle, pictureSrc, pictureAlt }: IHeader) {
   return (
-    <header className={styles.container}>
-      <img className={styles.image} src={pictureSrc} alt={pictureAlt}></img>
-      <h1 className={styles.title}>{title}</h1>
-      <h2 className={styles.subTitle}>{subTitle}</h2>
-    </header>
+    <S.Container>
+      <S.Image src={pictureSrc} alt={pictureAlt}></S.Image>
+      <S.Title>{title}</S.Title>
+      <S.SubTitle>{subTitle}</S.SubTitle>
+    </S.Container>
   );
 }
 

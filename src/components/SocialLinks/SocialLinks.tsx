@@ -1,15 +1,15 @@
 import { SocialIcon } from "react-social-icons";
-import styles from "./SocialLinks.module.css";
+import * as S from "./styles";
 export interface ISocialLinks {
   links: string[];
 }
 function SocialLinks({ links }: ISocialLinks) {
   return (
-    <div className={styles.container}>
+    <S.Container>
       {links.map((link) => (
-        <SocialIcon className={styles.icon} url={link} fgColor="white" style={{zoom: "0.8"}} />
+        <SocialIcon url={link} fgColor="white" style={{ zoom: "0.8" }} />
       ))}
-    </div>
+    </S.Container>
   );
 }
 
