@@ -22,6 +22,7 @@ export const content: ContentType = {
     "https://github.com/alissonmdo",
     "https://www.linkedin.com/in/alissonmdo",
     "https://twitter.com/alissonmdo",
+    "https://twitch.tv/alissonmdo",
   ],
   footerText: "Made with love in Brazil.",
 };
