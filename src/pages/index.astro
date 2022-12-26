@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const content = {
+  header: {
+    title: "Alisson Oliveira",
+    subTitle: "@alissonmdo",
+    pictureSrc: "assets/profile_pic.jpg",
+    pictureAlt: "Alisson Oliveira",
+  },
+  buttons: [
+    { link: "https://www.alisson.dev", text: "Developer Portfolio" },
+    { link: "https://www.alissonoliveira.com", text: "Personal Website" },
+  ],
+  socialLinks: [
+    { text: "Github", href: "https://github.com/alissonmdo" },
+    { text: "Linkedin", href: "https://www.linkedin.com/in/alissonmdo" },
+    { text: "Twitter", href: "https://twitter.com/alissonmdo" },
+    { text: "Twitch", href: "https://twitch.tv/alissonmdo" },
+  ],
+  footerText: "Made with love in Brazil.",
+};
+---
+
+<Layout title="alissonmdo's tiny planet">
+  <main class="main-app">
+    <Header
+      title={content.header.title}
+      subTitle={content.header.subTitle}
+      pictureSrc={content.header.pictureSrc}
+      pictureAlt={content.header.pictureAlt}
+    />
+    {
+      content.buttons.map((link) => (
+        <Button link={link.link} text={link.text} />
+      ))
+    }
+    <Footer text={content.footerText} />
+  </main>
+
+  <style>
+    .main-app {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      padding-bottom: 15vh;
+      background: linear-gradient(111.72deg, #0a9396 0%, #001219 100%);
+    }
+  </style>
+</Layout>
