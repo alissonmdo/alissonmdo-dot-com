@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { SocialLinks } from "../components/SocialLinks";
 
 const content = {
   header: {
@@ -38,6 +39,7 @@ const content = {
         <Button link={link.link} text={link.text} />
       ))
     }
+    <SocialLinks links={content.socialLinks} />
     <Footer text={content.footerText} />
   </main>
 
@@ -47,10 +49,10 @@ const content = {
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      width: 100vw;
+      max-width: 450px;
       height: 100vh;
       padding-bottom: 15vh;
-      background: linear-gradient(111.72deg, #0a9396 0%, #001219 100%);
+      margin: 0 auto;
     }
   </style>
 </Layout>
