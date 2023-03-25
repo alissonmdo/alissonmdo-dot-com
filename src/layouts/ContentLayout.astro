@@ -1,0 +1,125 @@
+---
+import Button from "../components/Button.astro";
+
+const buttons = [
+  { link: "/games", text: "Games Portfolio" },
+  { link: "/blog", text: "My blog" },
+  { link: "/curriculum", text: "Curriculum" },
+  { link: "/contact", text: "Let's chat!" },
+];
+
+const pictureSrc = "assets/profile_navbar.jpg";
+---
+
+<section class="navbar-section">
+  <nav class="navbar-container">
+    <a class="navbar-profile-container" href="/">
+      <img class="navbar-profile" src={pictureSrc} alt="logo" />
+      Alisson de Oliveira
+    </a>
+    <ul class="navbar-buttons">
+      {
+        buttons.map((button) => (
+          <li>
+            <Button link={button.link} text={button.text} smallVersion />
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</section>
+<section class="content-section">
+  <main class="content-container"><slot /></main>
+</section>
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+  }
+  .navbar-section {
+    width: 100%;
+  }
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    margin: 20px;
+    border: 3px solid black;
+    background-color: #a3e635;
+    border-radius: 5px;
+    filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+  }
+  .navbar-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    height: 60px;
+    gap: 20px;
+    padding-top: 8px;
+  }
+  .navbar-profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-black);
+    font-weight: 600;
+    font-size: 1.2rem;
+    gap: 10px;
+    font-family: var(--text-font-family);
+    text-decoration: none;
+  }
+  .navbar-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid black;
+  }
+
+  .content-section {
+    min-height: 0; /* without min-height/height:0 flex:1 doesn't work */
+    flex: 1;
+    width: 100%;
+    display: flex;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 0; /* without min-height/height:0 flex:1 doesn't work */
+    flex: 1;
+    overflow: auto;
+    width: 100%;
+    padding: 20px;
+    margin: 0 20px 20px 20px;
+    border: 3px solid black;
+    /* background-color: var(--color-white); */
+    background-color: #fdfffb; /* temporary */
+    border-radius: 5px;
+    filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+  }
+
+  /* beautiful scrollbar */
+  .content-container::-webkit-scrollbar {
+    width: 10px;
+  }
+  .content-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .content-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  .content-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>

@@ -2,12 +2,15 @@
 export interface Props {
   text: string;
   link: string;
+  smallVersion?: boolean;
 }
 
-const { link, text } = Astro.props;
+const { link, text, smallVersion } = Astro.props;
 ---
 
-<a class="link-button" href={link}>{text}</a>
+<a class={`link-button ${smallVersion ? "link-button-small" : ""}`} href={link}
+  >{text}</a
+>
 
 <style>
   .link-button {
@@ -28,7 +31,13 @@ const { link, text } = Astro.props;
     font-size: 1.5rem;
     color: var(--color-black);
 
-    transition: all ease-in-out 200ms;
+  }
+
+  .link-button-small {
+    height: 40px;
+    width: fit-content;
+    padding: 0 1rem;
+    font-size: 1.2rem;
   }
 
   .link-button:hover {
