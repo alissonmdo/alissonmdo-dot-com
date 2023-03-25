@@ -8,7 +8,8 @@ export function SocialLinks({ links }: { links: any[] }) {
         justifyContent: "space-between",
         alignItems: "end",
         width: "100%",
-        padding: "10px 20%"
+        padding: "10px 20%",
+        filter: "drop-shadow(7px 7px 0 rgb(0 0 0 / 1))",
       }}
     >
       {links.map((link) => (

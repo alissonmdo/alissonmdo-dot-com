@@ -15,25 +15,25 @@ const { link, text } = Astro.props;
     max-width: 21.875rem;
     height: 3.75rem;
     margin-bottom: 0.75rem;
-    border: 0.1875rem solid #ffffff;
-    border-radius: 0.625rem;
-    background: none;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: var(--color-white);
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-
+    filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
     font-family: var(--text-font-family);
     font-weight: var(--text-default-weight);
     font-size: 1.5rem;
-    color: var(--color-white);
+    color: var(--color-black);
 
     transition: all ease-in-out 200ms;
   }
 
   .link-button:hover {
-    background-color: var(--color-blue);
-    box-shadow: 0 0 20px var(--color-blue);
     cursor: pointer;
+    background-color: var(--color-black);
+    color: var(--color-white);
   }
 </style>

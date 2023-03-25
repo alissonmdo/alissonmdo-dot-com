@@ -7,14 +7,16 @@ import { SocialLinks } from "../components/SocialLinks";
 
 const content = {
   header: {
-    title: "Alisson Oliveira",
-    subTitle: "@alissonmdo",
+    title: "Alisson de Oliveira",
+    subTitle: "Tech Lead ☀️ & Game Dev 🌑",
     pictureSrc: "assets/profile_pic.jpg",
     pictureAlt: "Alisson Oliveira",
   },
   buttons: [
-    { link: "https://www.alisson.dev", text: "Developer Portfolio" },
-    { link: "https://www.alissonoliveira.com", text: "Personal Website" },
+    { link: "/games", text: "Game Portfolio" },
+    { link: "/blog", text: "My blog" },
+    { link: "/dev", text: "Curriculum" },
+    { link: "/contact", text: "Let's chat!" },
   ],
   socialLinks: [
     { text: "Github", href: "https://github.com/alissonmdo" },
@@ -26,7 +28,10 @@ const content = {
 };
 ---
 
-<Layout title="alissonmdo's tiny planet" description="Hi, I'm a software engineer based on Brazil and this is my own little planet on the cyberspace">
+<Layout
+  title="alissonmdo's tiny planet"
+  description="Hi, I'm a software engineer based on Brazil and this is my own little planet on the cyberspace"
+>
   <main class="main-app">
     <Header
       title={content.header.title}
@@ -51,6 +56,7 @@ const content = {
       align-items: center;
       max-width: 450px;
       height: 100vh;
+      padding-top: 10px;
       padding-bottom: 15vh;
       margin: 0 auto;
     }
